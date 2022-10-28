@@ -1,4 +1,10 @@
 {
+  /**
+   * polymorphism(다형성) 의 장점
+   * 같은 부모 클래스를 받아왔기 때문에 같은 api를 사용해 재사용성을 높일 수 있음
+   * 그래서 아래 forEach를 돌려서 makeCoffee를 실행시켰을 때
+   * 서로 반환하는 값은 다르지만 에러가 발생하지 않고 사용할 수 있는 것 !
+   */
   type CoffeeCup = {
     shots: number;
     hasMilk?: boolean;
