@@ -57,7 +57,6 @@
   console.log(maker);
 
   class User {
-    // fullName: string; -> fullName이 변경되지 않기 때문
     get fullName(): string {
       return `${this.firstName} ${this.lastName}`;
     }
@@ -68,11 +67,12 @@
     set age(num: number) {
       this.internalAge = num;
     }
+    // 이렇게 constructor에 private으로 변수를 넣으면 멤버 변수로 자동으로 변환됨
     constructor(private firstName: string, private lastName: string) {}
   }
-  const user = new User("Steve", "Jobs");
-  user.age = 6;
-  console.log(user.fullName);
-  // Ellie로 바꿨는데도 Steve Jobs가 두 번 나옴
-  console.log(user.fullName);
+  let ellie = new User("ellie", "park");
+  console.log(ellie.fullName);
+  console.log(ellie.age);
+  ellie.age = 10;
+  console.log(ellie.age);
 }
