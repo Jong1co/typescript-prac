@@ -11,6 +11,10 @@
       this.coffeeBeans = coffeeBeans;
     }
 
+    static makeCoffee(coffeeBeans: number): CoffeeMachine {
+      return new CoffeeMachine(coffeeBeans);
+    }
+
     makeCoffee(shots: number): CoffeeCup {
       if (this.coffeeBeans < shots * CoffeeMachine.BEANS_GRAMM_PER_SHOT) {
         throw new Error("Not enough coffee beans!");
@@ -23,6 +27,6 @@
     }
   }
 
-  const maker = new CoffeeMachine(90);
+  const maker = CoffeeMachine.makeCoffee(30);
   console.log(maker);
 }
